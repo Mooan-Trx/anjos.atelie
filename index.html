@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ateliê Anjos | Costura Sob Medida & Ajustes em Caxias do Sul</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display (Títulos) + Inter (Corpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#faf8f2',
+                            100: '#f3eedf',
+                            200: '#e6d8ba',
+                            300: '#d7bd8f',
+                            400: '#c79f60',
+                            500: '#b8863b',
+                            600: '#a36f30',
+                            700: '#835329',
+                            800: '#6d4327',
+                            900: '#5a3824',
+                        },
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        cream: '#faf7f2',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .bg-pattern {
+            background-color: #faf7f2;
+            background-image: radial-gradient(#d7bd8f 0.75px, transparent 0.75px), radial-gradient(#d7bd8f 0.75px, #faf7f2 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0,15px 15px;
+            background-opacity: 0.15;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(184, 134, 59, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-cream text-gray-800 font-sans antialiased selection:bg-gold-200 selection:text-navy-900">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-gold-200/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-gold-400/60 flex items-center justify-center bg-white shadow-sm group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-feather-pointed text-gold-500 text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wide text-navy-900 block leading-none">ATELIÊ ANJOS</span>
+                    <span class="text-[10px] tracking-[0.2em] text-gold-600 font-medium uppercase block mt-1">Costura & Confecção</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700">
+                <a href="#servicos" class="hover:text-gold-600 transition-colors">Serviços</a>
+                <a href="#galeria" class="hover:text-gold-600 transition-colors">Portfólio</a>
+                <a href="#sobre" class="hover:text-gold-600 transition-colors">O Ateliê</a>
+                <a href="#orcamento" class="hover:text-gold-600 transition-colors">Simular Orçamento</a>
+            </nav>
+
+            <!-- Social Action Buttons -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://www.instagram.com/anjos.atl/" target="_blank" rel="noopener noreferrer" 
+                   class="p-2.5 rounded-full text-pink-700 bg-pink-50 hover:bg-pink-100 transition-colors" title="Instagram @anjos.atl">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+                <a href="https://wa.me/5551995069369?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20no%20Ateliê%20Anjos." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="bg-gold-500 hover:bg-gold-600 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Pedir Orçamento</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-navy-900 p-2 focus:outline-none" aria-label="Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gold-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#servicos" class="block py-2 text-gray-700 font-medium hover:text-gold-600">Serviços</a>
+            <a href="#galeria" class="block py-2 text-gray-700 font-medium hover:text-gold-600">Portfólio</a>
+            <a href="#sobre" class="block py-2 text-gray-700 font-medium hover:text-gold-600">O Ateliê</a>
+            <a href="#orcamento" class="block py-2 text-gray-700 font-medium hover:text-gold-600">Simular Orçamento</a>
+            <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+                <a href="https://wa.me/5551995069369?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20no%20Ateliê%20Anjos." target="_blank" class="w-full bg-emerald-600 text-white text-center py-2.5 rounded-xl font-medium flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Falar no WhatsApp
+                </a>
+                <a href="https://www.instagram.com/anjos.atl/" target="_blank" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-2.5 rounded-xl font-medium flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-instagram text-lg"></i> Siga @anjos.atl
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-gold-100/80 border border-gold-300/60 px-4 py-1.5 rounded-full text-gold-800 text-xs sm:text-sm font-medium">
+                        <i class="fa-solid fa-location-dot text-gold-600"></i> Caxias do Sul – RS
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-navy-900 leading-tight">
+                        Elegância, Caimento Perfeito & <span class="italic text-gold-600 font-normal">Dedicação</span> em Cada Ponto.
+                    </h1>
+                    
+                    <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        No <strong>Ateliê Anjos</strong>, transformamos tecidos em peças exclusivas sob medida e realizamos ajustes precisos com todo o carinho e cuidado que você e suas roupas merecem.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="https://wa.me/5551995069369?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20no%20Ateliê%20Anjos." 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3 group text-base">
+                            <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+                            <span>Solicitar Orçamento no WhatsApp</span>
+                        </a>
+                        
+                        <a href="https://www.instagram.com/anjos.atl/" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full sm:w-auto bg-white border border-gold-300 text-navy-900 hover:bg-gold-50 px-6 py-4 rounded-full font-semibold shadow-sm hover:shadow transition-all flex items-center justify-center gap-3 text-base">
+                            <i class="fa-brands fa-instagram text-xl text-pink-600"></i>
+                            <span>@anjos.atl</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Badges -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-gold-200/60 max-w-md mx-auto lg:mx-0 text-center">
+                        <div>
+                            <span class="block text-xl font-bold font-serif text-navy-900">100%</span>
+                            <span class="text-xs text-gray-500">Sob Medida</span>
+                        </div>
+                        <div>
+                            <span class="block text-xl font-bold font-serif text-navy-900">Atendimento</span>
+                            <span class="text-xs text-gray-500">Personalizado</span>
+                        </div>
+                        <div>
+                            <span class="block text-xl font-bold font-serif text-navy-900">Cuidado</span>
+                            <span class="text-xs text-gray-500">Em Cada Detalhe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Image Grid -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame -->
+                        <div class="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-gold-300 via-gold-100 to-transparent opacity-70 blur-lg"></div>
+                        
+                        <div class="relative bg-white p-3 rounded-3xl shadow-2xl border border-gold-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Ateliê de Costura e Confecção" 
+                                 class="w-full h-[420px] object-cover rounded-2xl">
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-4 rounded-xl border border-gold-200/80 shadow-lg flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gold-100 flex items-center justify-center text-gold-600 text-xl font-serif">
+                                    <i class="fa-solid fa-scissors"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-navy-900 text-sm">Confecção & Ajustes Fine Art</h4>
+                                    <p class="text-xs text-gray-500">Peças feitas com dedicação única</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-600 text-xs font-bold tracking-[0.2em] uppercase">Especialidades</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2">Nossos Serviços Exclusivos</h2>
+                <div class="w-16 h-0.5 bg-gold-400 mx-auto mt-4"></div>
+                <p class="text-gray-600 mt-4">Oferecemos soluções completas para o seu guarda-roupa, desde a criação da peça dos seus sonhos até o ajuste impecável.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-cream/60 border border-gold-200/80 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold-100 text-gold-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-tape"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Costura Sob Medida</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            Confecção de roupas exclusivas desenhadas para valorizar as suas formas com caimento perfeito e escolha livre de tecidos.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5551995069369?text=Olá!%20Tenho%20interesse%20em%20Costura%20Sob%20Medida." target="_blank" class="text-gold-700 text-sm font-semibold hover:text-gold-900 flex items-center gap-2">
+                        Solicitar peça <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-cream/60 border border-gold-200/80 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold-100 text-gold-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-person-dress"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Vestidos de Festa</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            Criação sob encomenda e ajustes finos para formaturas, casamentos, eventos especiais e moda festa sofisticada.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5551995069369?text=Olá!%20Gostaria%20de%20informações%20sobre%20Vestidos%20de%20Festa." target="_blank" class="text-gold-700 text-sm font-semibold hover:text-gold-900 flex items-center gap-2">
+                        Consultar opções <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-cream/60 border border-gold-200/80 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold-100 text-gold-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Ajustes & Reformas</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            Barras, ajustes de cintura, troca de zíperes, customizações e reforma de peças antigas mantendo o acabamento original.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5551995069369?text=Olá!%20Preciso%20fazer%20um%20ajuste/reforma%20em%20uma%20roupa." target="_blank" class="text-gold-700 text-sm font-semibold hover:text-gold-900 flex items-center gap-2">
+                        Mandar mensagem <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-cream/60 border border-gold-200/80 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold-100 text-gold-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-heart font-bold"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Peças Delicadas</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            Confecção e reparos em lingeries, moda íntima e tecidos finos como seda, cetim, rendas e tule.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5551995069369?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20confecção%20de%20peças%20delicadas." target="_blank" class="text-gold-700 text-sm font-semibold hover:text-gold-900 flex items-center gap-2">
+                        Saber mais <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Gallery / Portfolio Section -->
+    <section id="galeria" class="py-20 bg-cream/70 border-t border-b border-gold-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-gold-600 text-xs font-bold tracking-[0.2em] uppercase">Inspiração & Arte</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2">Galeria do Ateliê</h2>
+                <p class="text-gray-600 mt-3">Confira um pouco do universo de criação, tecidos e vestidos produzidos com carinho.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-10">
+                <button onclick="filterGallery('all')" class="filter-btn active bg-navy-900 text-white px-5 py-2 rounded-full text-sm font-medium transition-all">Todos</button>
+                <button onclick="filterGallery('vestidos')" class="filter-btn bg-white border border-gold-300 text-gray-700 px-5 py-2 rounded-full text-sm font-medium hover:bg-gold-50 transition-all">Vestidos</button>
+                <button onclick="filterGallery('sobmedida')" class="filter-btn bg-white border border-gold-300 text-gray-700 px-5 py-2 rounded-full text-sm font-medium hover:bg-gold-50 transition-all">Sob Medida</button>
+                <button onclick="filterGallery('detalhes')" class="filter-btn bg-white border border-gold-300 text-gray-700 px-5 py-2 rounded-full text-sm font-medium hover:bg-gold-50 transition-all">Ateliê & Detalhes</button>
+            </div>
+
+            <!-- Image Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryGrid">
+                
+                <!-- Item 1 -->
+                <div class="gallery-item vestidos group relative rounded-2xl overflow-hidden bg-white shadow-md border border-gold-200 cursor-pointer" 
+                     onclick="openModal('https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1200&q=80', 'Vestido de Festa Elegante')">
+                    <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80" 
+                         alt="Vestido de Festa" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div class="text-white">
+                            <span class="text-xs text-gold-300 font-medium uppercase tracking-wider">Vestidos</span>
+                            <h4 class="font-serif text-lg font-bold">Vestido Sob Encomenda</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="gallery-item sobmedida group relative rounded-2xl overflow-hidden bg-white shadow-md border border-gold-200 cursor-pointer"
+                     onclick="openModal('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80', 'Look Sob Medida Feminino')">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" 
+                         alt="Look Sob Medida" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div class="text-white">
+                            <span class="text-xs text-gold-300 font-medium uppercase tracking-wider">Sob Medida</span>
+                            <h4 class="font-serif text-lg font-bold">Peças Exclusivas & Caimento</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 - Mesa de Costura Corrigida -->
+                <div class="gallery-item detalhes group relative rounded-2xl overflow-hidden bg-white shadow-md border border-gold-200 cursor-pointer"
+                     onclick="openModal('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80', 'Mesa de Costura e Detalhes')">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" 
+                         alt="Mesa de Costura" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div class="text-white">
+                            <span class="text-xs text-gold-300 font-medium uppercase tracking-wider">Ateliê</span>
+                            <h4 class="font-serif text-lg font-bold">Acabamentos Manuais</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="gallery-item vestidos group relative rounded-2xl overflow-hidden bg-white shadow-md border border-gold-200 cursor-pointer"
+                     onclick="openModal('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=80', 'Vestido de Gala Fluido')">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" 
+                         alt="Vestido de Gala" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div class="text-white">
+                            <span class="text-xs text-gold-300 font-medium uppercase tracking-wider">Vestidos</span>
+                            <h4 class="font-serif text-lg font-bold">Modelagem e Fluidez</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="gallery-item sobmedida group relative rounded-2xl overflow-hidden bg-white shadow-md border border-gold-200 cursor-pointer"
+                     onclick="openModal('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1200&q=80', 'Ajuste e Confecção de Roupas')">
+                    <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80" 
+                         alt="Confecção de Roupas" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div class="text-white">
+                            <span class="text-xs text-gold-300 font-medium uppercase tracking-wider">Sob Medida</span>
+                            <h4 class="font-serif text-lg font-bold">Tecidos de Alta Qualidade</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="gallery-item detalhes group relative rounded-2xl overflow-hidden bg-white shadow-md border border-gold-200 cursor-pointer"
+                     onclick="openModal('https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=1200&q=80', 'Tesouras e Ferramentas de Costura')">
+                    <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80" 
+                         alt="Ferramentas de Costura" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div class="text-white">
+                            <span class="text-xs text-gold-300 font-medium uppercase tracking-wider">Detalhes</span>
+                            <h4 class="font-serif text-lg font-bold">Trabalho Artesanal</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Lightbox for Gallery -->
+    <div id="imageModal" class="fixed inset-0 z-50 bg-navy-900/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-gold-300">
+            <button onclick="closeModal()" class="absolute top-4 right-4 bg-navy-900 text-white w-10 h-10 rounded-full flex items-center justify-center z-10 hover:bg-gold-600 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <img id="modalImg" src="" alt="" class="w-full max-h-[75vh] object-contain bg-black">
+            <div class="p-4 bg-white text-center">
+                <h3 id="modalTitle" class="font-serif font-bold text-navy-900 text-lg"></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-gold-600 text-xs font-bold tracking-[0.2em] uppercase">Tradição & Carinho</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900">Sobre o Ateliê Anjos</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Localizado na charmosa cidade de <strong>Caxias do Sul – RS</strong>, o <strong>Ateliê Anjos</strong> nasceu da paixão pela arte da costura e pelo desejo de oferecer atendimento exclusivo e humanizado.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Acreditamos que cada roupa conta uma história. Seja na criação de um vestido dos sonhos sob medida ou no ajuste preciso da sua peça favorita do dia a dia, trabalhamos com dedicação, mantendo viva a tradição da boa costura aliada às tendências modernas.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3 p-3 rounded-xl bg-cream border border-gold-200">
+                            <i class="fa-solid fa-check text-gold-600 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Precisão nos Ajustes</h4>
+                                <p class="text-xs text-gray-500">Caimento perfeito no corpo</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 rounded-xl bg-cream border border-gold-200">
+                            <i class="fa-solid fa-check text-gold-600 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Peças Exclusivas</h4>
+                                <p class="text-xs text-gray-500">Confecção do seu jeito</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80" alt="Tecidos do Ateliê" class="rounded-2xl shadow-md border border-gold-200 w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1520006403909-838d6b92c22e?auto=format&fit=crop&w=600&q=80" alt="Detalhes de Costura" class="rounded-2xl shadow-md border border-gold-200 w-full h-64 object-cover mt-8">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quote Calculator Section -->
+    <section id="orcamento" class="py-20 bg-pattern">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gold-300">
+                
+                <div class="text-center mb-8">
+                    <span class="text-gold-600 text-xs font-bold tracking-[0.2em] uppercase">Simulador Rápido</span>
+                    <h2 class="font-serif text-3xl font-bold text-navy-900 mt-1">Solicite seu Orçamento Sem Compromisso</h2>
+                    <p class="text-gray-600 text-sm mt-2">Preencha abaixo para enviar a solicitação direta no nosso WhatsApp.</p>
+                </div>
+
+                <form id="quoteForm" onsubmit="sendWhatsAppQuote(event)" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-navy-900 mb-2">Seu Nome</label>
+                        <input type="text" id="clientName" required placeholder="Digite seu nome completo" 
+                               class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-navy-900 mb-2">Tipo de Serviço</label>
+                            <select id="serviceType" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all bg-white">
+                                <option value="Ajuste ou Barra">Ajuste / Barra de Roupa</option>
+                                <option value="Confecção Sob Medida">Confecção Sob Medida</option>
+                                <option value="Vestido de Festa">Vestido de Festa</option>
+                                <option value="Reforma de Peça">Reforma / Customização</option>
+                                <option value="Outro Serviço">Outro Serviço</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-navy-900 mb-2">Data Desejada (Opcional)</label>
+                            <input type="date" id="targetDate" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-navy-900 mb-2">Detalhes da Peça / Necessidade</label>
+                        <textarea id="serviceDetails" rows="4" placeholder="Ex: Preciso fazer a barra de um vestido e ajustar a cintura de uma calça..." 
+                                  class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all"></textarea>
+                    </div>
+
+                    <button type="submit" 
+                            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3 text-base">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Enviar Solicitação para o WhatsApp</span>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-white pt-16 pb-12 border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full border border-gold-400 flex items-center justify-center bg-navy-800">
+                            <i class="fa-solid fa-feather-pointed text-gold-400"></i>
+                        </div>
+                        <span class="font-serif text-2xl font-bold tracking-wide">ATELIÊ ANJOS</span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm">
+                        Costura, confecção sob medida, vestidos de festa e ajustes feitos com todo o carinho, dedicação e excelência.
+                    </p>
+                    <div class="flex items-center gap-4 pt-2">
+                        <a href="https://www.instagram.com/anjos.atl/" target="_blank" class="w-10 h-10 rounded-full bg-navy-800 border border-gray-700 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 transition-colors" title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5551995069369" target="_blank" class="w-10 h-10 rounded-full bg-navy-800 border border-gray-700 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 transition-colors" title="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold text-gold-400 mb-4">Atendimento</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-gold-400"></i>
+                            <span>Caxias do Sul – RS</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-gold-400"></i>
+                            <span>(51) 99506-9369</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-instagram text-gold-400"></i>
+                            <span>@anjos.atl</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Fast Navigation -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold text-gold-400 mb-4">Navegação</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#servicos" class="hover:text-gold-300 transition-colors">Serviços</a></li>
+                        <li><a href="#galeria" class="hover:text-gold-300 transition-colors">Portfólio</a></li>
+                        <li><a href="#sobre" class="hover:text-gold-300 transition-colors">Sobre Nós</a></li>
+                        <li><a href="#orcamento" class="hover:text-gold-300 transition-colors">Orçamentos</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 Ateliê Anjos. Todos os direitos reservados.</p>
+                <p class="flex items-center gap-1">Feito com <i class="fa-solid fa-heart text-gold-500"></i> em Caxias do Sul</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5551995069369?text=Olá!%20Vim%20pelo%20site%20do%20Ateliê%20Anjos%20e%20gostaria%20de%20tirar%20uma%20dúvida." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl hover:bg-emerald-600 hover:scale-110 transition-all duration-300 border-2 border-white"
+       aria-label="Atendimento via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close Mobile Menu on link click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Gallery Filter Logic
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-navy-900', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700');
+            });
+
+            event.currentTarget.classList.add('active', 'bg-navy-900', 'text-white');
+            event.currentTarget.classList.remove('bg-white', 'text-gray-700');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Lightbox Modal Logic
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalTitle = document.getElementById('modalTitle');
+
+        function openModal(src, title) {
+            modalImg.src = src;
+            modalTitle.innerText = title;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // WhatsApp Quote Form Submission
+        function sendWhatsAppQuote(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('clientName').value;
+            const service = document.getElementById('serviceType').value;
+            const date = document.getElementById('targetDate').value;
+            const details = document.getElementById('serviceDetails').value;
+
+            let message = `Olá! Gostaria de solicitar um orçamento no *Ateliê Anjos*:\n\n`;
+            message += `*Nome:* ${name}\n`;
+            message += `*Serviço:* ${service}\n`;
+            if (date) {
+                message += `*Data desejada:* ${date}\n`;
+            }
+            if (details) {
+                message += `*Detalhes:* ${details}\n`;
+            }
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/5551995069369?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
